@@ -28,8 +28,8 @@
     "start": "webpack-dev-server --mode development --open",
     "format": "npx prettier  --write '**/*.{css,html,js,json,md.json,yaml,yml}'",
     "format:check": "npx prettier  --check '**/*.{css,html,js,json,md.json,yaml,yml}'",
-    "lint": "npx eslint *.js --fix && npx stylelint *.css --fix",
-    "lint:check": "npx eslint '**/*.js' && npx stylelint '**/*.css'",
+    "lint": "npx eslint -c eslint.config '**/*.js' --fix && npx stylelint '**/*.css' --fix",
+    "lint:check": "npx eslint -c eslint.config '**/*.js' && npx stylelint '**/*.css'",
     "codecov": "npx codecov"
   },
   "repository": {
@@ -55,6 +55,7 @@
   },
   "jest": {
     "coverageDirectory": "./coverage/",
-    "collectCoverage": true
+    "collectCoverage": true,
+    "verbose": true
   }
 }
