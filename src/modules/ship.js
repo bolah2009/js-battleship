@@ -42,9 +42,8 @@ const validateShipPosition = (position, type) => {
 const ship = (type, position) => {
   validateShipType(type);
   validateShipPosition(position, type);
-  const shipType = shipTypes[type];
+  const { size } = shipTypes[type];
   const shipPosition = position;
-  const { size } = shipType;
   const hits = [];
   const isSunk = () => size === hits.length;
   const hit = pos => {
@@ -60,6 +59,8 @@ const ship = (type, position) => {
     isSunk,
     hit,
     hits,
+    position,
+    shipType: type,
   };
 };
 
