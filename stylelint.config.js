@@ -42,7 +42,6 @@ module.exports = {
     'declaration-block-semicolon-space-before': 'never',
     'declaration-block-single-line-max-declarations': 1,
     'declaration-block-trailing-semicolon': 'always',
-    'declaration-colon-newline-after': 'always-multi-line',
     'declaration-colon-space-after': 'always-single-line',
     'declaration-colon-space-before': 'never',
     'declaration-empty-line-before': [
@@ -99,7 +98,6 @@ module.exports = {
     'selector-pseudo-element-colon-notation': 'double',
     'selector-type-case': 'lower',
     'unit-case': 'lower',
-    'value-list-comma-newline-after': 'always-multi-line',
     'value-list-comma-space-after': 'always-single-line',
     'value-list-comma-space-before': 'never',
     'value-list-max-empty-lines': 0,
