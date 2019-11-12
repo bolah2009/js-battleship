@@ -10,21 +10,7 @@ This is the final project of the Main JavaScript curriculum at [Microverse](http
 
 The objective is to create a [battleship game](<https://en.wikipedia.org/wiki/Battleship_(game)>) using Test Driven Development. The features of the app also include:
 
-[Coming Soon]
-
 ### Development
-
-- Dependencies
-
-  - `eslint`: `^6.3.0`
-  - `eslint-config-airbnb`: `^18.0.1`
-  - `eslint-config-airbnb-base`: `^14.0.0`
-  - `eslint-plugin-import`: `^2.18.2`
-  - `stylelint`: `^11.0.0`
-  - `stylelint-config-recommended`: `^3.0.0`
-  - `webpack`: `^4.40.0`
-  - `webpack-cli`: `^3.3.8`
-  - `webpack-dev-server`: `^3.8.1`
 
 - Clone the project
 
@@ -43,6 +29,18 @@ npm install
 
 ```bash
 npm run test
+```
+
+- Run linter (eslint and stylelint)
+
+```bash
+npm run lint:check
+```
+
+- Run Prettier
+
+```bash
+npm run format:check
 ```
 
 - Run Script (Development mode)
@@ -67,9 +65,12 @@ npm run start
 
 ### [Live link](https://bolah2009.github.io/js-battleship/)
 
-### Screenshots
+### Screenshot
 
-[Coming Soon]
+![Screenshot 1](https://user-images.githubusercontent.com/36057474/68652960-ea8b8980-052a-11ea-80f7-4250cd83ea41.png)
+
+![Screenshot 2](https://user-images.githubusercontent.com/36057474/68653265-a482f580-052b-11ea-9e19-e630f0f8ebc2.png)
+
 
 ### Authors
 
