@@ -15,6 +15,10 @@ module.exports = {
   },
   plugins: ['prettier'],
   rules: {
+    'no-shadow': 'error',
+    'no-param-reassign': ['error', { props: false }],
+    'arrow-parens': ['error', 'as-needed'],
+    'operator-linebreak': ['error', 'after'],
     'prettier/prettier': 'error',
   },
 };
