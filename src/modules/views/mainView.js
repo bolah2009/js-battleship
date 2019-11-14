@@ -5,6 +5,7 @@ const mainView = () => {
   const board = gameBoardView();
   const createHeaderElement = () => {
     const html = `<h1>Battleship</h1>
+                  <input value="Help" class="button details" type="button" data-type="control" data-action="details">
                   <p id="info" class="notification">Place the ships</p>`;
     const attributes = [{ name: 'class', value: 'status d-flex jc-sa' }];
     const element = 'header';

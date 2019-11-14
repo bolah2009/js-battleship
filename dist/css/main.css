@@ -275,28 +275,30 @@ section {
   flex-wrap: wrap;
 }
 
-.control-panel .button {
+.button {
   margin: 2px 4px;
+  cursor: pointer;
   border: none;
   background: none;
   box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
     0 1px 5px 0 rgba(0, 0, 0, 0.12);
   transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
   will-change: box-shadow;
-  padding: 4px 8px;
+  padding: 8px 8px;
   font-size: 0.9em;
-  border-radius: 2px;
+  border-radius: 4px;
 }
 
-.control-panel .button:hover {
+.button:hover {
   box-shadow: 0 4px 0 -2px rgba(0, 0, 0, 0.2), 0 3px 2px 0 rgba(0, 0, 0, 0.14),
     0 2px 3px 0 rgba(0, 0, 0, 0.12);
   background-color: rgb(200, 200, 200);
   background-color: rgba(200, 200, 200, 0.3);
 }
 
-.control-panel .button[disabled],
-.control-panel .button[disabled]:hover {
+.button[disabled],
+.button[disabled]:hover {
+  cursor: not-allowed;
   box-shadow: initial;
   background-color: rgba(0, 0, 250, 0.3);
   background-color: rgb(250, 250, 250);
@@ -374,4 +376,201 @@ input:checked + .slider::before {
   -webkit-transform: translateX(8px);
   -ms-transform: translateX(8px);
   transform: translateX(12px);
+}
+
+/* Modal */
+
+.pop-up {
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  z-index: 3;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.pop-up.show {
+  display: flex;
+  padding: 1em;
+  animation: 0.4s ease-in popupshow;
+}
+
+.game-info {
+  background-color: #eee;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  padding: 1em;
+  border: 1px solid rgba(255, 255, 255, 85);
+  border-radius: 4px;
+  margin: 2% auto;
+  justify-self: center;
+  width: 100%;
+  max-width: 480px;
+  max-height: max-content;
+  position: relative;
+  animation: 0.4s ease-in popupformshow;
+  line-height: 1.7;
+}
+
+@keyframes popupformshow {
+  0% {
+    top: -300px;
+    opacity: 0;
+  }
+
+  50% {
+    top: -150px;
+    opacity: 0.5;
+  }
+
+  80% {
+    top: 10px;
+    opacity: 1;
+  }
+
+  100% {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+.game-info .button {
+  width: 80%;
+  font-size: 1.2em;
+  padding: 8px;
+  background-color: #fff;
+}
+
+.game-info .button:hover {
+  background-color: #f05;
+}
+
+.close {
+  color: #aaa;
+  position: absolute;
+  margin: 0;
+  top: 8px;
+  right: 8px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.game-info .heading {
+  text-align: center;
+}
+
+.game-info .text {
+  margin: 8px 2px;
+  line-height: 1.7;
+}
+
+.game-info .text.link,
+.game-info .text.link a {
+  margin: 16px 2px;
+  line-height: 1.7;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+strong {
+  font-weight: bold;
+  color: #f55;
+}
+
+.demo {
+  width: 8em;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.info-table {
+  background-color: #fff;
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  border: 2px solid purple;
+}
+
+.info-table caption {
+  padding: 8px;
+  font-style: italic;
+  color: #666;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.info-table thead .number {
+  width: 15%;
+}
+
+.info-table thead .name {
+  width: 35%;
+}
+
+.info-table thead .image {
+  width: 35%;
+}
+
+.info-table thead .size {
+  width: 15%;
+}
+
+.info-table th,
+.info-table td {
+  padding: 0.2em;
+  letter-spacing: 0.1em;
+}
+
+@media (min-width: 420px) {
+  .info-table th,
+  .info-table td {
+    padding: 1em;
+  }
+}
+
+.info-table tbody td {
+  text-align: center;
+}
+
+.info-table thead th {
+  border: 2px solid purple;
+}
+
+.info-table thead th:first-of-type {
+  border-left: none;
+}
+
+.info-table thead th:last-of-type {
+  border-right: none;
+}
+
+.info-table tbody tr:nth-child(odd) {
+  background-color: #f2f2f2;
+  border-bottom: 2px solid #020202;
+}
+
+.info-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+  border-bottom: 2px solid #090909;
+}
+
+.info-table tbody tr:last-of-type {
+  border: none;
+}
+
+.info-table tbody tr td:nth-child(3) {
+  background-color: #fff;
 }
