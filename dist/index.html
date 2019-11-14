@@ -19,6 +19,97 @@
   </head>
   <body>
     <div id="content"></div>
+    <div class="pop-up game-info-modal">
+      <section class="game-info d-flex col">
+        <span class="close as-fe">&times;</span>
+        <h2 class="heading">How to play (Rules of the Game)</h2>
+
+        <p class="text">
+          The game is played on two grids, one is the Ocean Grid and the other is the Target Grid.
+        </p>
+        <p class="text">
+          On one grid (Ocean Grid) the player arranges ships and records the shots by the opponent.
+          On the other grid (Target Grid), the player records their shots.
+        </p>
+        <p class="text">
+          Before play begins, the player secretly arranges their ships on their primary grid. Each
+          ship occupies some consecutive squares on the grid, arranged either horizontally or
+          vertically. <br />
+          The arrangement can be randomised using the <strong>Randomise</strong> button or be placed
+          manually using the <strong>Place ships</strong> button and using drag and drop to place
+          ships on the grid horizontally. Clicking on a ship rotates the position vertically when in
+          horizontal poition and vice versa.
+        </p>
+        <p class="text">
+          The number of squares for each ship is determined by the type of the ship. The ships
+          cannot overlap, that is, only one ship can occupy any given square in the grid and ships
+          can not be placed beside each other.<br />
+        </p>
+        <table class="info-table text">
+          <caption>
+            The types and numbers of ships allowed are the same for each player
+          </caption>
+          <thead>
+            <tr>
+              <th class="number" scope="col">No</th>
+              <th class="name" scope="col">Name</th>
+              <th class="image" scope="col">Image</th>
+              <th class="size" scope="col">Size</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Carrier</td>
+              <td class="carrier demo"></td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Battleship</td>
+              <td class="battleship demo"></td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Cruiser</td>
+              <td class="cruiser demo"></td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Submarine</td>
+              <td class="submarine demo"></td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Destroyer</td>
+              <td class="destroyer demo"></td>
+              <td>2</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="text">
+          After the ships have been positioned, the game proceeds in a series of rounds when the
+          <strong>Start Game</strong> button is clicked. The <strong>Reset Game</strong> button can
+          be clicked at any time during the game to stop and restart the game.
+        </p>
+        <p class="text">
+          In each round, each player takes a turn to click on a target square in the opponent's grid
+          which is to be shot at. The attacking player "target" grid is marked with red for "hit",
+          black for "miss".<br />
+
+          If all of a player's ships have been sunk, the game is over and their opponent wins.<br />
+        </p>
+        <p class="text link">
+          Learn more about
+          <a href="https://en.wikipedia.org/wiki/Battleship_(game)">the game here</a>
+        </p>
+
+        <button type="button" class="button as-c">Close</button>
+      </section>
+    </div>
     <script src="main.js"></script>
   </body>
 </html>

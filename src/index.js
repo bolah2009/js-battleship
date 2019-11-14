@@ -17,8 +17,10 @@ const startButton = getElement('[data-action="start"]');
 const resetButton = getElement('[data-action="reset"]');
 const placeShipButton = getElement('[data-action="place-ships"]');
 const computerButton = getElement('[data-action="computer"]');
+const infoButton = getElement('[data-action="details"]');
 const getCurrentShip = shipType => getElement(`.ship.${shipType}`, shipPort());
 const getBoardCell = pos => getElement(`[data-name=${pos}]`, playerBoard());
+const gameInfo = getElement('.pop-up.game-info-modal');
 
 const game = battleship();
 
@@ -127,7 +129,10 @@ const rotateShip = ({
   }
   target.classList.add('error');
   gameStatus('Can not rotate ship, invalid position!');
-  setInterval(() => target.classList.remove('error'), 1500);
+  setTimeout(() => {
+    target.classList.remove('error');
+    gameStatus('Place the ships');
+  }, 1500);
 };
 
 const toggleShipEvents = toggleEventListener => {
@@ -136,6 +141,24 @@ const toggleShipEvents = toggleEventListener => {
   toggleEventListener('drop', handleDropEvent);
   toggleEventListener('dragend', handleDragEvent);
   toggleEventListener('click', rotateShip);
+};
+
+const toggleDetailsModal = () => {
+  const displayInfo = (show = true) => gameInfo.classList.toggle('show', show);
+  const closeSign = getElement('.close', gameInfo);
+  const closeButton = getElement('.button', gameInfo);
+  const hideModal = ({ target, currentTarget }) => {
+    if ([currentTarget, closeButton, closeSign].includes(target)) {
+      displayInfo(false);
+    } else {
+      return;
+    }
+
+    gameInfo.removeEventListener('click', hideModal);
+  };
+
+  displayInfo();
+  gameInfo.addEventListener('click', hideModal);
 };
 
 const startGame = () => {
@@ -238,6 +261,7 @@ const playGame = ({
 const startApp = () => {
   toggleShipEvents(document.addEventListener);
   controlPanel.addEventListener('click', handleControls);
+  infoButton.addEventListener('click', toggleDetailsModal);
   document.addEventListener('click', playGame);
 
   appendShipsToBoard();
